@@ -1,219 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Navy Federal Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --navy-blue: #003366;
-      --orange: #f47c20;
-      --light-blue: #e6f0fa;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      background-color: #f1f8ff;
     }
 
     header {
-      background-color: var(--navy-blue);
+      background-color: #0a3c66;
       color: white;
+      padding: 15px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
-      padding: 10px 20px;
     }
 
-    .logo {
-      font-weight: bold;
-      font-size: 16px;
-      flex: 1;
+    header h1 {
+      font-size: 20px;
+      margin: 0;
     }
 
     nav {
       display: flex;
-      gap: 15px;
-      flex: 2;
-      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
 
-    nav a.active {
-      border-bottom: 3px solid var(--orange);
+    .tab-bar {
+      background-color: white;
+      padding: 15px;
+      display: flex;
+      gap: 30px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .tab-bar a {
+      color: #0a3c66;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tab-bar a.active {
+      border-bottom: 3px solid #f58220;
       padding-bottom: 5px;
     }
 
-    .top-bar-right {
-      display: flex;
-      gap: 15px;
-      flex: 1;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-    }
-
-    .sub-nav {
-      background-color: var(--light-blue);
-      padding: 12px 20px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .sub-nav a {
-      color: var(--navy-blue);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .sub-nav a.active {
-      color: var(--orange);
-      border-bottom: 2px solid var(--orange);
-    }
-
-    .contact-section {
-      background-color: var(--navy-blue);
+    .main-section {
+      background-color: #0a3c66;
       color: white;
+      padding: 60px 20px 30px;
       text-align: center;
-      padding: 60px 20px 40px;
     }
 
-    .contact-section h1 {
-      font-size: 32px;
+    .main-section h2 {
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
-    .contact-section p {
-      font-size: 18px;
-      margin-top: 10px;
+    .main-section p {
+      font-size: 16px;
+      margin-top: 0;
     }
 
-    .call-now-button {
-      margin-top: 30px;
-    }
-
-    .call-now-button a {
-      background-color: var(--orange);
-      color: white;
-      text-decoration: none;
-      padding: 18px 40px;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 20px;
+    .call-button {
       display: inline-block;
-      transition: background-color 0.3s;
-    }
-
-    .call-now-button a:hover {
-      background-color: #d86617;
-    }
-
-    .routing-box {
-      background-color: var(--light-blue);
-      text-align: center;
-      padding: 15px 0;
+      margin-top: 20px;
+      padding: 18px 36px;
+      font-size: 20px;
+      background-color: #f58220;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
       font-weight: bold;
-      color: var(--navy-blue);
-      letter-spacing: 1px;
     }
 
-    .get-started {
+    .routing {
+      background-color: #eaf3fc;
+      padding: 20px;
       text-align: center;
+      font-weight: bold;
+      color: #0a3c66;
+    }
+
+    .contact-options {
       padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .get-started h2 {
-      color: var(--navy-blue);
-      font-size: 28px;
+    .contact-options .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
-    .get-started p {
+    .contact-options .option img {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    .contact-options .option h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #000;
+    }
+
+    .contact-options .option h4 {
+      margin: 5px 0 0;
       font-size: 18px;
+      color: #000;
+    }
+
+    .contact-options .option p {
+      margin: 8px 0;
+      font-size: 16px;
       color: #333;
     }
 
-    .live-chat {
-      position: fixed;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: var(--orange);
-      padding: 10px;
-      color: white;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-weight: bold;
-      cursor: pointer;
+    .contact-options .option a {
+      color: #0077cc;
+      text-decoration: underline;
+      font-size: 16px;
     }
 
-    /* Mobile responsiveness */
+    .contact-options .indent {
+      margin-left: 60px;
+    }
+
     @media (max-width: 768px) {
-      header, .top-bar-right, nav, .sub-nav {
+      .contact-options .option {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
       }
 
-      .call-now-button a {
-        font-size: 22px;
-        padding: 20px 50px;
+      .contact-options .indent {
+        margin-left: 0;
       }
 
-      .contact-section h1 {
-        font-size: 28px;
-      }
-
-      .get-started h2 {
+      .call-button {
+        width: 100%;
         font-size: 24px;
+        padding: 20px;
+      }
+
+      header, .tab-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">🌐 NAVY FEDERAL CREDIT UNION®</div>
+    <h1>NAVY FEDERAL CREDIT UNION</h1>
     <nav>
       <a href="#">Personal</a>
       <a href="#">Business</a>
-      <a href="#" class="active">Membership</a>
+      <a href="#">Membership</a>
+      <a href="#">Branches & ATMs</a>
+      <a href="#">Sign In</a>
     </nav>
-    <div class="top-bar-right">
-      <a href="#" style="color:white;">📍 Branches & ATMs</a>
-      <a href="#" style="color:white;">🔒 Sign In</a>
-      <a href="#" style="color:white;">🔍</a>
-    </div>
   </header>
 
-  <div class="sub-nav">
+  <div class="tab-bar">
     <a href="#">Navy Federal Membership</a>
     <a href="#" class="active">About Us</a>
   </div>
 
-  <div class="contact-section">
-    <h1>Have a Question or Need Help?</h1>
-    <hr style="width: 60px; border: 2px solid var(--orange); margin: 10px auto;">
+  <section class="main-section">
+    <h2>Have a Question or Need Help?</h2>
     <p>Stateside member reps are here for you 24/7. Reach us online, over the phone or at a branch.</p>
-    <div class="call-now-button">
-      <a href="tel:18888423328">📞 Call Now</a>
-    </div>
-  </div>
+    <a href="tel:18888426328" class="call-button">📞 Call Now</a>
+  </section>
 
-  <div class="routing-box">
+  <div class="routing">
     NAVY FEDERAL ROUTING NUMBER: 256074974
   </div>
 
-  <div class="get-started">
-    <h2>Let's Get Started</h2>
-    <p>How would you like to connect?</p>
-  </div>
+  <section class="contact-options">
+    <div class="option">
+      <img src="https://img.icons8.com/ios-filled/50/4a90e2/chat.png" alt="Chat Icon" />
+      <div>
+        <h3>Chat</h3>
+        <p>
+          Get your questions answered in real-time. Click the Live Chat button located on the top left of this screen.
+          For account-specific assistance, sign in to your account and select the chat icon at the top right of the screen.
+          The virtual assistant is available to answer questions 24/7, and our member service representatives are available
+          Monday through Friday, from 8 am to 8 pm ET.
+        </p>
+      </div>
+    </div>
 
-  <div class="live-chat">LIVE CHAT</div>
+    <div class="option">
+      <img src="https://img.icons8.com/ios-filled/50/4a90e2/phone.png" alt="Phone Icon" />
+      <div>
+        <h3>Phone Support</h3>
+        <p>Talk to a real person anytime. Our stateside member reps are available 24/7.</p>
+        <a href="tel:18888426328">1-888-842-6328</a><br />
+        <a href="#">Other important and international phone numbers</a>
+      </div>
+    </div>
+
+    <div class="option indent">
+      <h4><strong>BUSINESS SOLUTIONS</strong></h4>
+      <a href="tel:18774181462">1-877-418-1462</a>
+      <p>Representatives are available Monday through Friday, 9 am to 7 pm, ET.</p>
+    </div>
+
+    <div class="option indent">
+      <h4><strong>COLLECTIONS</strong></h4>
+      <a href="tel:18003363767">1-800-336-3767</a>
+      <p>Speak to a Collections specialist Monday through Friday, 8 am to 9 pm, ET.</p>
+    </div>
+
+    <div class="option">
+      <img src="https://img.icons8.com/ios-filled/50/4a90e2/lock.png" alt="Lock Icon" />
+      <div>
+        <h3>Secure Message</h3>
+        <p>If you want to talk about your account, you can sign in to online banking, choose "Messages," then "Send us a message."</p>
+        <a href="#">Send a message</a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
