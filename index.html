@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Navy Federal Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --navy-blue: #003366;
+      --orange: #f47c20;
+      --light-blue: #e6f0fa;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,65 +18,75 @@
     }
 
     header {
-      background-color: #003366;
+      background-color: var(--navy-blue);
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 40px;
+      flex-wrap: wrap;
+      padding: 10px 20px;
     }
 
     .logo {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 16px;
+      flex: 1;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      flex: 2;
+      justify-content: center;
     }
 
     nav a {
       color: white;
-      margin: 0 20px;
       text-decoration: none;
       font-weight: 600;
     }
 
     nav a.active {
-      border-bottom: 3px solid #f47c20;
+      border-bottom: 3px solid var(--orange);
       padding-bottom: 5px;
     }
 
     .top-bar-right {
       display: flex;
-      gap: 20px;
-      align-items: center;
+      gap: 15px;
+      flex: 1;
+      justify-content: flex-end;
+      flex-wrap: wrap;
     }
 
     .sub-nav {
-      background-color: #e6f0fa;
-      padding: 15px 40px;
+      background-color: var(--light-blue);
+      padding: 12px 20px;
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .sub-nav a {
-      color: #003366;
+      color: var(--navy-blue);
       font-weight: bold;
       text-decoration: none;
     }
 
     .sub-nav a.active {
-      color: #f47c20;
-      border-bottom: 2px solid #f47c20;
+      color: var(--orange);
+      border-bottom: 2px solid var(--orange);
     }
 
     .contact-section {
-      background-color: #003366;
+      background-color: var(--navy-blue);
       color: white;
       text-align: center;
-      padding: 80px 20px 40px;
-      position: relative;
+      padding: 60px 20px 40px;
     }
 
     .contact-section h1 {
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
@@ -79,19 +96,19 @@
     }
 
     .call-now-button {
-      margin-top: 25px;
+      margin-top: 30px;
     }
 
     .call-now-button a {
-      background-color: #f47c20;
+      background-color: var(--orange);
       color: white;
       text-decoration: none;
-      padding: 12px 30px;
-      border-radius: 6px;
+      padding: 18px 40px;
+      border-radius: 10px;
       font-weight: bold;
-      font-size: 16px;
-      transition: background-color 0.3s;
+      font-size: 20px;
       display: inline-block;
+      transition: background-color 0.3s;
     }
 
     .call-now-button a:hover {
@@ -99,11 +116,11 @@
     }
 
     .routing-box {
-      background-color: #e6f0fa;
+      background-color: var(--light-blue);
       text-align: center;
       padding: 15px 0;
       font-weight: bold;
-      color: #003366;
+      color: var(--navy-blue);
       letter-spacing: 1px;
     }
 
@@ -113,7 +130,7 @@
     }
 
     .get-started h2 {
-      color: #003366;
+      color: var(--navy-blue);
       font-size: 28px;
     }
 
@@ -127,13 +144,35 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      background-color: #f47c20;
+      background-color: var(--orange);
       padding: 10px;
       color: white;
       writing-mode: vertical-rl;
       text-orientation: mixed;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header, .top-bar-right, nav, .sub-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .call-now-button a {
+        font-size: 22px;
+        padding: 20px 50px;
+      }
+
+      .contact-section h1 {
+        font-size: 28px;
+      }
+
+      .get-started h2 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -159,7 +198,7 @@
 
   <div class="contact-section">
     <h1>Have a Question or Need Help?</h1>
-    <hr style="width: 60px; border: 2px solid #f47c20; margin: 10px auto;">
+    <hr style="width: 60px; border: 2px solid var(--orange); margin: 10px auto;">
     <p>Stateside member reps are here for you 24/7. Reach us online, over the phone or at a branch.</p>
     <div class="call-now-button">
       <a href="tel:18888423328">📞 Call Now</a>
